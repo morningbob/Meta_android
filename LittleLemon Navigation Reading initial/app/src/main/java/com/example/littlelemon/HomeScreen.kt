@@ -18,9 +18,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
     Column {
         Column(
             modifier = Modifier
@@ -57,7 +58,9 @@ fun HomeScreen() {
                 )
             }
             Button(
-                onClick = { /*TODO: Order Take Away Button onClick*/ },
+                onClick = {
+                          navController.navigate(Menu.route)
+                          },
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF4CE14))
             ) {
